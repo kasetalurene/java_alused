@@ -2,12 +2,18 @@ import java.util.Scanner;
 
 public class main {
 
-    public static void main(String[] args) {
-              printText();
+        private static void printStars(int amount) {
+            int i = 1;
+            while (i <= amount){
+                System.out.print("*");
+                i++;
+            }
+            System.out.println();
+        }
+        public static void main(String[] args) {
+            printStars(5);
+            printStars(3);
+            printStars(9);
+        }
     }
-
-    public static void printText() {
-
-        System.out.println("In the beginning there were the swamp, the hoe and Java.");
-    }
-}
+    
