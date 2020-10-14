@@ -1,12 +1,14 @@
+import java.util.Scanner;
+
 public class main {
 
     public static void main(String[] args) {
-        System.out.println("Rene Kasetalu");
-        int days = 365;
-        int hours = 24;
-        int minutes = 60;
-        int seconds = 60;
-        int secondsInAYear = days * hours * minutes * seconds;
-        System.out.println("There are " + secondsInAYear + " seconds in a year.");
+        Scanner reader = new Scanner(System.in);
+        System.out.print("Type a number: ");
+        int firstNumber = Integer.parseInt(reader.nextLine());
+        System.out.print("Type another number: ");
+        int secondtNumber = Integer.parseInt(reader.nextLine());
+        double result = (double)firstNumber / secondtNumber;
+        System.out.println("Division: " + firstNumber + " / " + secondtNumber + " = " + result);
     }
 }
