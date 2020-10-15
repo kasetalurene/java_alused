@@ -1,27 +1,35 @@
-  
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class main {
 
-    public static int greatest(ArrayList<Integer> list) {
+    public static String reverse(String text) {
         // write your code here
-        int greatestNumber = list.get(0);
-        for (Integer number : list) {
-            if (number > greatestNumber) {
-                greatestNumber = number;
-            }
+        int i = text.length() - 1; // last symbol index
+        String reverseText = "";
+        while (i >= 0) {
+            reverseText += text.charAt(i);
+            i--;
         }
-        return greatestNumber;
+        return reverseText;
     }
-
-
+    public static boolean palindrome(String text) {
+        // write your code here
+        if (text.equals(reverse(text))) {
+            return true;
+        } else {
+            return false;
+        }
+    }
     public static void main(String[] args) {
-        ArrayList<Integer> list = new ArrayList<Integer>();
-        list.add(11);
-        list.add(2);
-        list.add(7);
-        list.add(2);
+        Scanner reader = new Scanner(System.in);
 
-        System.out.println("The greatest number is: " + greatest(list));
+        System.out.println("Type a text: ");
+        String text = reader.nextLine();
+        if (palindrome(text)) {
+            System.out.println("The text is a palindrome!");
+        } else {
+            System.out.println("The text is not a palindrome!");
+        }
     }
 }
